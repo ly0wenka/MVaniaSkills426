@@ -33,8 +33,6 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
 	E_WMagic WMagicSlotted;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
-    E_BMagic BMagicSlotted;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
 	E_Skills SkillAcquired;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
 	bool bWMagicReady { true };

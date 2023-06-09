@@ -8,8 +8,8 @@
 #include "UObject/Object.h"
 #include "UObject/ScriptMacros.h"
 #include "Engine/Texture2D.h"
-#include "SlateBrush.h"
-#include "SlateColor.h"
+#include "Styling/SlateBrush.h"
+#include "Styling/SlateColor.h"
 
 #include "MVTypes.generated.h"
 
@@ -48,7 +48,7 @@ enum class E_Skills : uint8
 USTRUCT(BlueprintType)
 struct MVANIASKILLS426_API FSTR_SkillData
 {
-    GENERATED_STRUCT_BODY()
+    GENERATED_BODY()
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     FText Title;

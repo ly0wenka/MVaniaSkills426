@@ -1,0 +1,128 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "MVaniaSkills426 (Debug)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426 Win64 Debug Build",
+			"program": "S:\\repos\\unreal\\MVaniaSkills426\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"args": [
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426 (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426 Win64 DebugGame Build",
+			"program": "S:\\repos\\unreal\\MVaniaSkills426\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"args": [
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426 (Development)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426 Win64 Development Build",
+			"program": "S:\\repos\\unreal\\MVaniaSkills426\\Binaries\\Win64\\UE4.exe",
+			"args": [
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426 (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426 Win64 Shipping Build",
+			"program": "S:\\repos\\unreal\\MVaniaSkills426\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"args": [
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426 (Test)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426 Win64 Test Build",
+			"program": "S:\\repos\\unreal\\MVaniaSkills426\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"args": [
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426Editor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426Editor Win64 Debug Build",
+			"program": "S:\\Program Files\\UE_4.27\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"args": [
+				"S:\\repos\\unreal\\MVaniaSkills426\\MVaniaSkills426.uproject"
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426Editor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426Editor Win64 DebugGame Build",
+			"program": "S:\\Program Files\\UE_4.27\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
+			"args": [
+				"S:\\repos\\unreal\\MVaniaSkills426\\MVaniaSkills426.uproject"
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "MVaniaSkills426Editor (Development)",
+			"request": "launch",
+			"preLaunchTask": "MVaniaSkills426Editor Win64 Development Build",
+			"program": "S:\\Program Files\\UE_4.27\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"S:\\repos\\unreal\\MVaniaSkills426\\MVaniaSkills426.uproject"
+			],
+			"cwd": "S:\\Program Files\\UE_4.27",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "S:\\Program Files\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "clr",
+			"request": "launch",
+			"program": "S:\\Program Files\\UE_4.27\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"console": "externalTerminal",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=S:\\repos\\unreal\\MVaniaSkills426\\MVaniaSkills426.uproject",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "S:\\Program Files\\UE_4.27"
+		}
+	]
+}

@@ -10,6 +10,7 @@ public class MVaniaSkills426 : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "UMG" });
 		PublicDependencyModuleNames.AddRange(new string[] { "Blutility", "EditorScriptingUtilities", "UnrealEd", "MaterialEditor", "CascadeToNiagaraConverter" });
+		PublicDependencyModuleNames.AddRange(new string[] { "SlateCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 		MinFilesUsingPrecompiledHeaderOverride = 1;
