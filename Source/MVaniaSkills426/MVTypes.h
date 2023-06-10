@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "GameFramework/DamageType.h"
 
 #include "UObject/Object.h"
 #include "UObject/ScriptMacros.h"
@@ -43,6 +44,18 @@ enum class E_Skills : uint8
     ElectroSpark,
     LensOfTruth,
     Mist
+};
+
+UCLASS()
+class MVANIASKILLS426_API UDamage_Lightning : public UDamageType
+{
+    GENERATED_BODY()
+};
+
+UCLASS()
+class MVANIASKILLS426_API UDamage_Fire : public UDamageType
+{
+    GENERATED_BODY()
 };
 
 USTRUCT(BlueprintType)

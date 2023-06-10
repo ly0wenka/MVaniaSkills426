@@ -26,7 +26,7 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	 
+
 protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
     E_BMagic BMagicSlotted;
@@ -36,9 +36,28 @@ protected:
 	E_Skills SkillAcquired;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
 	bool bWMagicReady { true };
+protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
 	bool bHasDoubleJump;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
 	FSTR_SkillData DoubleJumpData;
-
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
+	bool bHasBackDash;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
+	FSTR_SkillData BackDashData;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
+	bool bHasBMagicFireball;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
+	FSTR_SkillData BMagicFireballData;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
+	FSTR_MagicAttributes FireballAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
+	bool bHasBMagicElectroSpark;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
+	FSTR_SkillData BMagicElectroSparkData;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
+	FSTR_MagicAttributes ElectroSparkAttributes;
 };
