@@ -76,9 +76,9 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
 	bool bIsUsingLensOfTruth;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
-	float LensActiveTimePercent = 1.0f;
+	float LensOfTruthActiveTimePercent = 1.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
-	float LensCooldownTimePercent = 0.0f;
+	float LensOfTruthCooldownTimePercent = 0.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
 	FSTR_SkillData WMagicLensOfTruthData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
@@ -89,11 +89,21 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	bool bIsUsingMist;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
-	float LensActiveTimePercent = 1.0f;
+	float MistActiveTimePercent = 1.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
-	float LensCooldownTimePercent = 0.0f;
+	float MistCooldownTimePercent = 0.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	FSTR_SkillData WMagicMistData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	FSTR_MagicAttributes MistAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Shield")
+	bool bHasWMagicShield = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Shield")
+	FSTR_MagicAttributes ShieldAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
+	bool bHasWMagicTimeSlow = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
+	FSTR_MagicAttributes TimeSlowAttributes;
 };

@@ -80,7 +80,7 @@ AMVCharacter::AMVCharacter()
 
 	WMagicLensOfTruthData.Title = FText::FromString(TEXT("Learned LensOfTruth!"));
 	WMagicLensOfTruthData.InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
+		TEXT("Texture2D'/Game/Textures/T_LTrigger_01.T_LTrigger_01'")));
 	WMagicLensOfTruthData.SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LensOfTruth.T_LensOfTruth'")));
 	WMagicLensOfTruthData.SkillIcon.SetImageSize(FVector2D(200.f, 200.f));
@@ -101,7 +101,7 @@ AMVCharacter::AMVCharacter()
 
 	WMagicMistData.Title = FText::FromString(TEXT("Learned Mist!"));
 	WMagicMistData.InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
+		TEXT("Texture2D'/Game/Textures/T_LTrigger_01.T_LTrigger_01'")));
 	WMagicMistData.SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Mist.T_Mist'")));
 	WMagicMistData.SkillIcon.SetImageSize(FVector2D(200.f, 200.f));
@@ -119,6 +119,22 @@ AMVCharacter::AMVCharacter()
 	MistAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Mist.T_Mist'")));
 	MistAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+
+	ShieldAttributes.Name = FText::FromString(TEXT("Shield"));
+	ShieldAttributes.ManaCost = 10;
+	ShieldAttributes.Damage = 0;
+	ShieldAttributes.DamageType = UDamage_White::StaticClass();
+	ShieldAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_Shield.T_Shield'")));
+	ShieldAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+
+	TimeSlowAttributes.Name = FText::FromString(TEXT("TimeSlow"));
+	TimeSlowAttributes.ManaCost = 20;
+	TimeSlowAttributes.Damage = 0;
+	TimeSlowAttributes.DamageType = UDamage_White::StaticClass();
+	TimeSlowAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_TimeSlow.T_TimeSlow'")));
+	TimeSlowAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
 }
 
 // Called when the game starts or when spawned
