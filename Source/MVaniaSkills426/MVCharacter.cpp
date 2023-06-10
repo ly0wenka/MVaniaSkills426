@@ -44,13 +44,6 @@ AMVCharacter::AMVCharacter()
 	FireballAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Fireball.T_Fireball'")));
 
-	ElectroSparkAttributes.Name = FText::FromString(TEXT("ElectroSpark"));
-	ElectroSparkAttributes.ManaCost = 25;
-	ElectroSparkAttributes.Damage = 100;
-	ElectroSparkAttributes.DamageType = UDamage_Lightning::StaticClass();
-	ElectroSparkAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_ElectroSpark.T_ElectroSpark'")));
-
 	BMagicElectroSparkData.Title = FText::FromString(TEXT("Learned ElectroSpark!"));
 	BMagicElectroSparkData.InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
@@ -63,6 +56,27 @@ AMVCharacter::AMVCharacter()
 	BMagicElectroSparkData.SkillBorderColor.TintColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	BMagicElectroSparkData.SkillFontColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	BMagicElectroSparkData.bMagicSkill = true;
+
+	ElectroSparkAttributes.Name = FText::FromString(TEXT("ElectroSpark"));
+	ElectroSparkAttributes.ManaCost = 25;
+	ElectroSparkAttributes.Damage = 100;
+	ElectroSparkAttributes.DamageType = UDamage_Lightning::StaticClass();
+	ElectroSparkAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_ElectroSpark.T_ElectroSpark'")));
+
+	BloodlustAttributes.Name = FText::FromString(TEXT("Bloodlust"));
+	BloodlustAttributes.ManaCost = 50;
+	BloodlustAttributes.Damage = 200;
+	BloodlustAttributes.DamageType = UDamage_Blood::StaticClass();
+	BloodlustAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_Bloodlust.T_Bloodlust'")));
+
+	ArcticBlastAttributes.Name = FText::FromString(TEXT("ArcticBlast"));
+	ArcticBlastAttributes.ManaCost = 25;
+	ArcticBlastAttributes.Damage = 10;
+	ArcticBlastAttributes.DamageType = UDamage_Ice::StaticClass();
+	ArcticBlastAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_ArcticBlast.T_ArcticBlast'")));
 }
 
 // Called when the game starts or when spawned

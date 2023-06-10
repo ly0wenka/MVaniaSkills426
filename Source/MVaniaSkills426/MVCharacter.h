@@ -60,4 +60,14 @@ protected:
 	FSTR_SkillData BMagicElectroSparkData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	FSTR_MagicAttributes ElectroSparkAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
+	bool bHasBMagicBloodlust;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
+	FSTR_MagicAttributes BloodlustAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
+	bool bHasBMagicArcticBlast;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
+	FSTR_MagicAttributes ArcticBlastAttributes;
 };

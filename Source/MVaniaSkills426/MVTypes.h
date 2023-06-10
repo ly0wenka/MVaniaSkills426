@@ -58,6 +58,18 @@ class MVANIASKILLS426_API UDamage_Fire : public UDamageType
     GENERATED_BODY()
 };
 
+UCLASS()
+class MVANIASKILLS426_API UDamage_Blood : public UDamageType
+{
+    GENERATED_BODY()
+};
+
+UCLASS()
+class MVANIASKILLS426_API UDamage_Ice : public UDamageType
+{
+    GENERATED_BODY()
+};
+
 USTRUCT(BlueprintType)
 struct MVANIASKILLS426_API FSTR_SkillData
 {
