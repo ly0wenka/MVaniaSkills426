@@ -91,13 +91,13 @@ AMVCharacter::AMVCharacter()
 	WMagicLensOfTruthData.SkillFontColor = FSlateColor(FLinearColor(.7f, .7f, 1.0f));
 	WMagicLensOfTruthData.bMagicSkill = true;
 
-	LensOfTruthAttributes.Name = FText::FromString(TEXT("LensOfTruth"));
-	LensOfTruthAttributes.ManaCost = 10;
-	LensOfTruthAttributes.Damage = 0;
-	LensOfTruthAttributes.DamageType = UDamage_White::StaticClass();
-	LensOfTruthAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	WMagicMap[E_WMagic::LensOfTruth].Name = FText::FromString(TEXT("LensOfTruth"));
+	WMagicMap[E_WMagic::LensOfTruth].ManaCost = 10;
+	WMagicMap[E_WMagic::LensOfTruth].Damage = 0;
+	WMagicMap[E_WMagic::LensOfTruth].DamageType = UDamage_White::StaticClass();
+	WMagicMap[E_WMagic::LensOfTruth].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LensOfTruth.T_LensOfTruth'")));
-	LensOfTruthAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	WMagicMap[E_WMagic::LensOfTruth].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
 
 	WMagicMistData.Title = FText::FromString(TEXT("Learned Mist!"));
 	WMagicMistData.InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
@@ -112,29 +112,29 @@ AMVCharacter::AMVCharacter()
 	WMagicMistData.SkillFontColor = FSlateColor(FLinearColor(.7f, .7f, 1.0f));
 	WMagicMistData.bMagicSkill = true;
 
-	MistAttributes.Name = FText::FromString(TEXT("Mist"));
-	MistAttributes.ManaCost = 10;
-	MistAttributes.Damage = 0;
-	MistAttributes.DamageType = UDamage_White::StaticClass();
-	MistAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	WMagicMap[E_WMagic::Mist].Name = FText::FromString(TEXT("Mist"));
+	WMagicMap[E_WMagic::Mist].ManaCost = 10;
+	WMagicMap[E_WMagic::Mist].Damage = 0;
+	WMagicMap[E_WMagic::Mist].DamageType = UDamage_White::StaticClass();
+	WMagicMap[E_WMagic::Mist].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Mist.T_Mist'")));
-	MistAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	WMagicMap[E_WMagic::Mist].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
 
-	ShieldAttributes.Name = FText::FromString(TEXT("Shield"));
-	ShieldAttributes.ManaCost = 10;
-	ShieldAttributes.Damage = 0;
-	ShieldAttributes.DamageType = UDamage_White::StaticClass();
-	ShieldAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	WMagicMap[E_WMagic::Shield].Name = FText::FromString(TEXT("Shield"));
+	WMagicMap[E_WMagic::Shield].ManaCost = 10;
+	WMagicMap[E_WMagic::Shield].Damage = 0;
+	WMagicMap[E_WMagic::Shield].DamageType = UDamage_White::StaticClass();
+	WMagicMap[E_WMagic::Shield].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Shield.T_Shield'")));
-	ShieldAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	WMagicMap[E_WMagic::Shield].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
 
-	TimeSlowAttributes.Name = FText::FromString(TEXT("TimeSlow"));
-	TimeSlowAttributes.ManaCost = 20;
-	TimeSlowAttributes.Damage = 0;
-	TimeSlowAttributes.DamageType = UDamage_White::StaticClass();
-	TimeSlowAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	WMagicMap[E_WMagic::TimeSlow].Name = FText::FromString(TEXT("TimeSlow"));
+	WMagicMap[E_WMagic::TimeSlow].ManaCost = 20;
+	WMagicMap[E_WMagic::TimeSlow].Damage = 0;
+	WMagicMap[E_WMagic::TimeSlow].DamageType = UDamage_White::StaticClass();
+	WMagicMap[E_WMagic::TimeSlow].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_TimeSlow.T_TimeSlow'")));
-	TimeSlowAttributes.IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	WMagicMap[E_WMagic::TimeSlow].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
 }
 
 // Called when the game starts or when spawned

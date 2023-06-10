@@ -28,7 +28,7 @@ UENUM(BlueprintType)
 enum class E_WMagic : uint8
 {
     None,
-    LensOfTrush,
+    LensOfTruth,
     Mist,
     Shield,
     TimeSlow
@@ -125,4 +125,7 @@ struct MVANIASKILLS426_API FSTR_MagicAttributes
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TSubclassOf<UDamageType> DamageType;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    E_WMagic WMagicType;
 };

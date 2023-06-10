@@ -27,7 +27,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
     E_BMagic BMagicSlotted;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
@@ -36,41 +36,41 @@ protected:
 	E_Skills SkillAcquired;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
 	bool bWMagicReady { true };
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
 	bool bHasDoubleJump;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
 	FSTR_SkillData DoubleJumpData;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
 	bool bHasBackDash;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
 	FSTR_SkillData BackDashData;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	bool bHasBMagicFireball;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	FSTR_SkillData BMagicFireballData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	FSTR_MagicAttributes FireballAttributes;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	bool bHasBMagicElectroSpark;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	FSTR_SkillData BMagicElectroSparkData;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	FSTR_MagicAttributes ElectroSparkAttributes;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
 	bool bHasBMagicBloodlust;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
 	FSTR_MagicAttributes BloodlustAttributes;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
 	bool bHasBMagicArcticBlast;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
 	FSTR_MagicAttributes ArcticBlastAttributes;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
 	bool bHasWMagicLensOfTruth;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
@@ -81,9 +81,7 @@ protected:
 	float LensOfTruthCooldownTimePercent = 0.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
 	FSTR_SkillData WMagicLensOfTruthData;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
-	FSTR_MagicAttributes LensOfTruthAttributes;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	bool bHasWMagicMist;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
@@ -94,16 +92,23 @@ protected:
 	float MistCooldownTimePercent = 0.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	FSTR_SkillData WMagicMistData;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
-	FSTR_MagicAttributes MistAttributes;
-protected:
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Shield")
 	bool bHasWMagicShield = true;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Shield")
-	FSTR_MagicAttributes ShieldAttributes;
-protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Shield")
+	float ShieldCooldownTimePercent = 0.0f;
+public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
 	bool bHasWMagicTimeSlow = true;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
-	FSTR_MagicAttributes TimeSlowAttributes;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
+	float TimeSlowCooldownTimePercent = 0.0f;
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White")
+	TMap<E_WMagic, FSTR_MagicAttributes> WMagicMap = {
+		{E_WMagic::None, FSTR_MagicAttributes()},
+		{E_WMagic::LensOfTruth, FSTR_MagicAttributes()},
+		{E_WMagic::Mist, FSTR_MagicAttributes()},
+		{E_WMagic::Shield, FSTR_MagicAttributes()},
+		{E_WMagic::TimeSlow, FSTR_MagicAttributes()}
+	};
 };
