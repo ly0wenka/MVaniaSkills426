@@ -70,4 +70,30 @@ protected:
 	bool bHasBMagicArcticBlast;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
 	FSTR_MagicAttributes ArcticBlastAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
+	bool bHasWMagicLensOfTruth;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
+	bool bIsUsingLensOfTruth;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
+	float LensActiveTimePercent = 1.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
+	float LensCooldownTimePercent = 0.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
+	FSTR_SkillData WMagicLensOfTruthData;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
+	FSTR_MagicAttributes LensOfTruthAttributes;
+protected:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
+	bool bHasWMagicMist;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
+	bool bIsUsingMist;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
+	float LensActiveTimePercent = 1.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
+	float LensCooldownTimePercent = 0.0f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
+	FSTR_SkillData WMagicMistData;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
+	FSTR_MagicAttributes MistAttributes;
 };
