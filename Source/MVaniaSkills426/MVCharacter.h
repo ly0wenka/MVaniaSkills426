@@ -51,25 +51,17 @@ public:
 	bool bHasBMagicFireball;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	FSTR_SkillData BMagicFireballData;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
-	FSTR_MagicAttributes FireballAttributes;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	bool bHasBMagicElectroSpark;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	FSTR_SkillData BMagicElectroSparkData;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
-	FSTR_MagicAttributes ElectroSparkAttributes;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
 	bool bHasBMagicBloodlust;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
-	FSTR_MagicAttributes BloodlustAttributes;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
 	bool bHasBMagicArcticBlast;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ArcticBlast")
-	FSTR_MagicAttributes ArcticBlastAttributes;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
 	bool bHasWMagicLensOfTruth;
@@ -103,6 +95,14 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
 	float TimeSlowCooldownTimePercent = 0.0f;
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black")
+	TMap<E_BMagic, FSTR_MagicAttributes> BMagicMap = {
+		{E_BMagic::None, FSTR_MagicAttributes()},
+		{E_BMagic::Fireball, FSTR_MagicAttributes()},
+		{E_BMagic::ElectroSpark, FSTR_MagicAttributes()},
+		{E_BMagic::Bloodlust, FSTR_MagicAttributes()},
+		{E_BMagic::ArcticBlast, FSTR_MagicAttributes()}
+	};
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White")
 	TMap<E_WMagic, FSTR_MagicAttributes> WMagicMap = {
 		{E_WMagic::None, FSTR_MagicAttributes()},

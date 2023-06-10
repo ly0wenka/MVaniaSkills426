@@ -37,11 +37,11 @@ AMVCharacter::AMVCharacter()
 	BMagicFireballData.SkillFontColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	BMagicFireballData.bMagicSkill = true;
 
-	FireballAttributes.Name = FText::FromString(TEXT("Fireball"));
-	FireballAttributes.ManaCost = 5;
-	FireballAttributes.Damage = 50;
-	FireballAttributes.DamageType = UDamage_Fire::StaticClass();
-	FireballAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	BMagicMap[E_BMagic::Fireball].Name = FText::FromString(TEXT("Fireball"));
+	BMagicMap[E_BMagic::Fireball].ManaCost = 5;
+	BMagicMap[E_BMagic::Fireball].Damage = 50;
+	BMagicMap[E_BMagic::Fireball].DamageType = UDamage_Fire::StaticClass();
+	BMagicMap[E_BMagic::Fireball].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Fireball.T_Fireball'")));
 
 	BMagicElectroSparkData.Title = FText::FromString(TEXT("Learned ElectroSpark!"));
@@ -57,25 +57,25 @@ AMVCharacter::AMVCharacter()
 	BMagicElectroSparkData.SkillFontColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	BMagicElectroSparkData.bMagicSkill = true;
 
-	ElectroSparkAttributes.Name = FText::FromString(TEXT("ElectroSpark"));
-	ElectroSparkAttributes.ManaCost = 25;
-	ElectroSparkAttributes.Damage = 100;
-	ElectroSparkAttributes.DamageType = UDamage_Lightning::StaticClass();
-	ElectroSparkAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	BMagicMap[E_BMagic::ElectroSpark].Name = FText::FromString(TEXT("ElectroSpark"));
+	BMagicMap[E_BMagic::ElectroSpark].ManaCost = 25;
+	BMagicMap[E_BMagic::ElectroSpark].Damage = 100;
+	BMagicMap[E_BMagic::ElectroSpark].DamageType = UDamage_Lightning::StaticClass();
+	BMagicMap[E_BMagic::ElectroSpark].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_ElectroSpark.T_ElectroSpark'")));
 
-	BloodlustAttributes.Name = FText::FromString(TEXT("Bloodlust"));
-	BloodlustAttributes.ManaCost = 50;
-	BloodlustAttributes.Damage = 200;
-	BloodlustAttributes.DamageType = UDamage_Blood::StaticClass();
-	BloodlustAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	BMagicMap[E_BMagic::Bloodlust].Name = FText::FromString(TEXT("Bloodlust"));
+	BMagicMap[E_BMagic::Bloodlust].ManaCost = 50;
+	BMagicMap[E_BMagic::Bloodlust].Damage = 200;
+	BMagicMap[E_BMagic::Bloodlust].DamageType = UDamage_Blood::StaticClass();
+	BMagicMap[E_BMagic::Bloodlust].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Bloodlust.T_Bloodlust'")));
 
-	ArcticBlastAttributes.Name = FText::FromString(TEXT("ArcticBlast"));
-	ArcticBlastAttributes.ManaCost = 25;
-	ArcticBlastAttributes.Damage = 10;
-	ArcticBlastAttributes.DamageType = UDamage_Ice::StaticClass();
-	ArcticBlastAttributes.IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	BMagicMap[E_BMagic::ArcticBlast].Name = FText::FromString(TEXT("ArcticBlast"));
+	BMagicMap[E_BMagic::ArcticBlast].ManaCost = 25;
+	BMagicMap[E_BMagic::ArcticBlast].Damage = 10;
+	BMagicMap[E_BMagic::ArcticBlast].DamageType = UDamage_Ice::StaticClass();
+	BMagicMap[E_BMagic::ArcticBlast].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_ArcticBlast.T_ArcticBlast'")));
 
 	WMagicLensOfTruthData.Title = FText::FromString(TEXT("Learned LensOfTruth!"));
