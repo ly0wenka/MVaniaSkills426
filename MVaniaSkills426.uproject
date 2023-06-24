@@ -11,7 +11,8 @@
 			"AdditionalDependencies": [
 				"Engine",
 				"Blutility",
-				"EditorScriptingUtilities"
+				"EditorScriptingUtilities",
+				"UMG"
 			]
 		}
 	],
