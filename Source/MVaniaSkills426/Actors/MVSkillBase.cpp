@@ -8,6 +8,10 @@
 #include "Math/Color.h"
 #include "Templates/SharedPointer.h"
 #include "Templates/SharedPointerInternals.h"
+#include "Curves/CurveFloat.h"
+#include "Curves/RealCurve.h"
+#include "Curves/KeyHandle.h"
+#include "Kismet/KismetMathLibrary.h"
 
 AMVSkillBase::AMVSkillBase()
 {
@@ -112,8 +116,59 @@ AMVSkillBase::AMVSkillBase()
 	Statue->SetVisibility(false);
 	Statue->SetupAttachment(RootComponent);
 
-
 	SFX_SkillAcquire = LoadObject<USoundBase>(this, TEXT(
 		"SoundWave'/Game/Audio/SFX_SkillAcquired.SFX_SkillAcquired'"
 	));
+
+#pragma region SkillMeshMovementTimeline
+	SkillMeshMovementTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("SkillMeshMovementTimeline"));
+
+	if (SkillMeshMovementTimeline)
+	{
+		UCurveFloat* FloatCurve = CreateDefaultSubobject<UCurveFloat>(TEXT("FloatCurve"));
+		// Add your timeline curve keyframes here
+		TArray<FKeyHandle> KeysHandles = {
+			FloatCurve->FloatCurve.AddKey(0.0f, 0.0f),
+			FloatCurve->FloatCurve.AddKey(2.5f, 1.0f),
+			FloatCurve->FloatCurve.AddKey(5.0f, 0.0f)
+		};
+
+		for (auto& KeyHandle : KeysHandles)
+		{
+			FloatCurve->FloatCurve.SetKeyInterpMode(KeyHandle, ERichCurveInterpMode::RCIM_Cubic, true);
+		}
+
+		FOnTimelineEvent TimelineFinishedEvent;
+
+		FOnTimelineFloat TimelineCallback;
+		TimelineCallback.BindUFunction(this, FName("TimelineFloatReturn"));
+
+		SkillMeshMovementTimeline->AddInterpFloat(FloatCurve, TimelineCallback,
+			FName("Movement"));
+		SkillMeshMovementTimeline->SetLooping(true);
+		SkillMeshMovementTimeline->SetAutoActivate(true);
+	}
+#pragma endregion
+
+}
+
+void AMVSkillBase::SkillMeshMovementTimelineUpdate(float MovementValue)
+{
+	// Perform the vector interpolation
+	FVector NewLocation = UKismetMathLibrary::VLerp(SkillBeginPosition, SkillEndPosition, MovementValue);
+
+	Skill_Mesh->SetRelativeLocation(NewLocation);
+
+	CustomTimelineEvent(MovementValue);
+}
+
+void AMVSkillBase::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+void AMVSkillBase::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
 }

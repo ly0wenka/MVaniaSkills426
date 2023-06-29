@@ -9,6 +9,8 @@
 #include "Components/PointLightComponent.h"
 #include "Components/DecalComponent.h"
 #include "Sound/SoundBase.h"
+#include "Components/TimelineComponent.h"
+#include "Containers/Array.h"
 #include "MVSkillBase.generated.h"
 
 UCLASS()
@@ -67,4 +69,28 @@ public:
 
 	UPROPERTY(EditAnywhere, Category="SFX_SkillAcquire")
 	USoundBase* SFX_SkillAcquire;
+
+	UPROPERTY(EditAnywhere, Category="SkillBeginPosition", Meta = (MakeEditWidget = true))
+	FVector SkillBeginPosition = FVector(0.000000, 0.000000, 150.000000);
+
+	UPROPERTY(EditAnywhere, Category="SkillEndPosition", Meta = (MakeEditWidget = true))
+	FVector SkillEndPosition = FVector(0.000000, 0.000000, 200.000000);
+
+public:
+    UPROPERTY(EditAnywhere, Category = "SkillMeshMovementTimeline")
+    UTimelineComponent* SkillMeshMovementTimeline;
+
+    UFUNCTION()
+    void SkillMeshMovementTimelineUpdate(float Value);
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void CustomTimelineEvent(float Value);
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 };

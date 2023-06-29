@@ -5,6 +5,9 @@
 #include "NavAreas/NavArea_Obstacle.h"
 #include "Blueprint/UserWidget.h"
 #include "../HUD/MVNotify.h"
+#include "WidgetBlueprint.h"
+#include "Components/Widget.h"
+#include "Blueprint/UserWidget.h"
 
 // Sets default values
 AMVInteractiveObjectBase::AMVInteractiveObjectBase()
@@ -26,11 +29,21 @@ void AMVInteractiveObjectBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UMVNotify* NotifyWidget = CreateWidget<UMVNotify>(GetWorld(), UMVNotify::StaticClass());
+	const UWidgetBlueprint* WidgetBlueprint = LoadObject<UWidgetBlueprint>(nullptr, TEXT("WidgetBlueprint'/Game/Notify.Notify'"));
+	if (WidgetBlueprint)
+	{
+		UUserWidget* UserWidget = WidgetBlueprint->GeneratedClass->GetDefaultObject<UUserWidget>();
+		if (UserWidget)
+		{
+			UserWidget->AddToViewport();
+		}
+	}
+	
+	/*UMVNotify* NotifyWidget = CreateWidget<UMVNotify>(GetWorld(), UMVNotify::StaticClass());
 	if (NotifyWidget)
 	{
 		NotifyWidget->AddToViewport();
-	}
+	}*/
 }
 
 // Called every frame
