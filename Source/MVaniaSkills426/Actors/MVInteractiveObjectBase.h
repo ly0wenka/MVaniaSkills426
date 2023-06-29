@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
+#include "../HUD/MVNotify.h"
+#include "Sound/SoundWave.h"
 #include "MVInteractiveObjectBase.generated.h"
 
 UCLASS()
@@ -28,4 +30,11 @@ public:
 	USceneComponent* DefaultSceneRoot;
 	UPROPERTY(VisibleAnywhere, Category = "InteractiveObjectBase")
 	UBoxComponent* InteractColliderBox;
+
+	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
+	UMVNotify* Notify;
+	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
+	FText InteractMessage;
+	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
+	USoundBase* SFXCanInteract;
 };

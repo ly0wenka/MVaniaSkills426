@@ -24,7 +24,7 @@ AMVSkillBase::AMVSkillBase()
 
 	Skill_Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Skill_Mesh"));
 	Skill_Mesh->SetRelativeLocation(FVector(0., 0., 160.));
-	Skill_Mesh->SetRelativeRotation(FRotator(0., 0., 90.));
+	Skill_Mesh->SetRelativeRotation(FRotator(0., 90., 0.));
 	Skill_Mesh->SetStaticMesh(LoadObject<UStaticMesh>(this, TEXT(
 		"StaticMesh'/Game/MV/StaticMeshes/SM_MoveSkill.SM_MoveSkill'"
 	)));
@@ -71,21 +71,21 @@ AMVSkillBase::AMVSkillBase()
 	SM_Candle_Stands[1]->SetRelativeLocation(FVector(-195.0f, .0f, .0f));
 
 	SM_Candle_Stands[2]->SetRelativeLocation(FVector(-120.0f, -100.0f, .0f));
-	SM_Candle_Stands[2]->SetRelativeRotation(FRotator(.0f, .0f, -110.0f));
+	SM_Candle_Stands[2]->SetRelativeRotation(FRotator(.0f, -110.0f, .0f));
 	SM_Candle_Stands[2]->SetRelativeScale3D(FVector(1.2f));
 
 	SM_Candle_Stands[3]->SetRelativeLocation(FVector(120.0f, -100.0f, .0f));
-	SM_Candle_Stands[3]->SetRelativeRotation(FRotator(.0f, .0f, -160.0f));
+	SM_Candle_Stands[3]->SetRelativeRotation(FRotator(.0f, -160.0f, .0f));
 	SM_Candle_Stands[3]->SetRelativeScale3D(FVector(1.2f));
 
-	PS_Candle_VFXs[3]->SetRelativeRotation(FRotator(.0f, .0f, 50.0f));
+	PS_Candle_VFXs[3]->SetRelativeRotation(FRotator(.0f, 50.0f, .0f));
 	
 	const int32 SM_Candles_Dias_RangeLength = 2;
 	for (int32 i = 0; i < SM_Candles_Dias_RangeLength; ++i)
 	{
 		auto* Candles_Dias_ = CreateDefaultSubobject<UStaticMeshComponent>(*FString::Printf(TEXT("Candles_Dias_%d"), i + 1));
 		Candles_Dias_->SetRelativeLocation(FVector(-90.f, 24.f, 95.f));
-		Candles_Dias_->SetRelativeRotation(FRotator(.0f, .0f, -90.0f));
+		Candles_Dias_->SetRelativeRotation(FRotator(.0f, -90.0f, .0f));
 		Candles_Dias_->SetRelativeScale3D(FVector(3., 3., 3.));
 		Candles_Dias_->SetStaticMesh(LoadObject<UStaticMesh>(this, TEXT(
 			"StaticMesh'/Game/InfinityBladeEffects/Effects/FX_Meshes/Mobile/SM_Candle_Drips_3.SM_Candle_Drips_3'"
@@ -98,11 +98,11 @@ AMVSkillBase::AMVSkillBase()
 	}
 
 	SM_Candles_Dias_Range[1]->SetRelativeLocation(FVector(90, 20, 100));
-	SM_Candles_Dias_Range[1]->SetRelativeRotation(FRotator(.0f, .0f, -40.0f));
+	SM_Candles_Dias_Range[1]->SetRelativeRotation(FRotator(.0f, -40.0f, .0f));
 
 	Decal_Skill = CreateDefaultSubobject<UDecalComponent>(TEXT("Decal_Skill"));
 	Decal_Skill->SetRelativeLocation(FVector(.0f, .0f, 120.f));
-	Decal_Skill->SetRelativeRotation(FRotator(.0f, -90.0f, .0f));
+	Decal_Skill->SetRelativeRotation(FRotator(-90.0f, .0f, .0f));
 	Decal_Skill->SetRelativeScale3D(FVector(0.1f));
 	Decal_Skill->DecalSize = FVector(256.0f, 300.0f, 400.f);
 	Decal_Skill->SetupAttachment(RootComponent);

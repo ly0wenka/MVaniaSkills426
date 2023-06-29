@@ -4,6 +4,7 @@
 #include "MVInteractiveObjectBase.h"
 #include "NavAreas/NavArea_Obstacle.h"
 #include "Blueprint/UserWidget.h"
+#include "Sound/SoundWave.h"
 #include "../HUD/MVNotify.h"
 #include "WidgetBlueprint.h"
 #include "Components/Widget.h"
@@ -22,6 +23,10 @@ AMVInteractiveObjectBase::AMVInteractiveObjectBase()
 	InteractColliderBox->AreaClass = UNavArea_Obstacle::StaticClass();
 	InteractColliderBox->SetCollisionResponseToChannel(ECollisionChannel::ECC_Visibility, ECollisionResponse::ECR_Block);
 	InteractColliderBox->SetupAttachment(RootComponent);
+
+	SFXCanInteract = LoadObject<USoundWave>(this, TEXT(
+		"SoundWave'/Engine/VREditor/Sounds/UI/Floating_UI_Close.Floating_UI_Close'"
+	));
 }
 
 // Called when the game starts or when spawned
