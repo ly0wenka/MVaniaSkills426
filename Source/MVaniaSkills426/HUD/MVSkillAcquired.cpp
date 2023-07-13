@@ -104,5 +104,32 @@ void UMVSkillAcquired::NativeOnInitialized()
 2 Padding 10 10 10 10
 3 T_Image_DoubleJump
 
+1 Overlay Input_Overlay
+2 Anchors LowerCenter
+3 Pos X 0 -75 150 100 0.5 0.5
 
+1 Input_Image
+2 T_Scroll
+
+1 Input_Button_Image
+2 HA VA Fill Fill
+3 T_Button_A
+4 Scale 0.5 0.7
+
+1 Description_Overlay
+2 Mid Center
+3 505 -110 450 490
+
+1 Description_Image
+2 T_Scroll
+
+1 Description_Text
+2 65 70 60 30
+3 HA Center
+4 Allows player to jump again in mid-air.
+5 Color 0 0 0 1
+6 FT_Gothic_Numbers_Font
+7 Size 20
+8 Justification Center
+9 Auto Wrap Text = true
 */

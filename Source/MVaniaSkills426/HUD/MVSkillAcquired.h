@@ -61,5 +61,20 @@ protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|ScreenshotBorder|Screenshot_Image")
 	UImage* Screenshot_Image;
 
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Input_Overlay")
+	UOverlay* Input_Overlay;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Input_Overlay|Input_Image")
+	UImage* Input_Image;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Input_Overlay|Input_Button_Image")
+	UImage* Input_Button_Image;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay")
+	UOverlay* Description_Overlay;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Description_Image")
+	UImage* Description_Image;
+
 	virtual void NativeOnInitialized() override;
 };
