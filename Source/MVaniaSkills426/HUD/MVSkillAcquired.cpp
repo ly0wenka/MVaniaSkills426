@@ -99,4 +99,10 @@ void UMVSkillAcquired::NativeOnInitialized()
 
 2 Skill_Icon_Right
 1 Duplicate Skill_Icon_Left
+
+1 Image Screenshot_Image
+2 Padding 10 10 10 10
+3 T_Image_DoubleJump
+
+
 */

@@ -58,5 +58,8 @@ protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|ScreenshotBorder")
 	UBorder* ScreenshotBorder;
 
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|ScreenshotBorder|Screenshot_Image")
+	UImage* Screenshot_Image;
+
 	virtual void NativeOnInitialized() override;
 };
