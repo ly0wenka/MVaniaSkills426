@@ -5,9 +5,25 @@
 #include "Widgets/Layout/Anchors.h"
 #include "Layout/Margin.h"
 #include "Components/SlateWrapperTypes.h"
+#include "Components/CanvasPanelSlot.h"
+#include "Widgets/Input/SButton.h"
+#include "Templates/SharedPointer.h"
 
 void UMVSkillAcquired::NativeOnInitialized()
 {
+	Super::NativeOnInitialized();
+	//TSharedPtr<SButton> MyButton = SNew(SButton)
+	//	.Text(FText::FromString("Click Me"))
+	//	.OnClicked(FOnClicked::CreateLambda([]() -> FReply {
+	//	// Button click callback implementation
+	//	return FReply::Handled();
+	//		}));
+
+	//// Add the MyButton widget to a parent widget
+	//if (UCanvasPanel* ParentContainer = Cast<UCanvasPanel>(GetRootWidget()))
+	//{
+	//	ParentContainer->AddChild(MyButton.ToSharedRef());
+	//}
 /*
 	BackgroundBlur->SetAnchorsInViewport(FAnchors(0.f, 0.f, 1.f, 1.f));
 	BackgroundBlur->BlurStrength = 5.0f;
@@ -29,6 +45,20 @@ void UMVSkillAcquired::NativeOnInitialized()
 
 
 */
+	ScreenshotBorder->SetContentColorAndOpacity(FLinearColor(0.15f, 0.15f, 0.f, 1.f));
+	/*
+
+	if (UCanvasPanelSlot* CanvasSlot = Cast<UCanvasPanelSlot>(ScreenshotBorder->Slot))
+	{
+		// Set the position and size of the border
+		CanvasSlot->SetPosition(FVector2D(0.f, 170.f));
+		CanvasSlot->SetSize(FVector2D(1000.f, 600.f));
+
+		// Set the alignment of the border
+		CanvasSlot->SetAlignment(FVector2D(0.5f, 0.5f));
+	}
+*/
+
 }
 
 /*

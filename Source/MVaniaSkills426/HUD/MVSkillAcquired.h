@@ -10,6 +10,7 @@
 #include "Components/Image.h"
 #include "Components/HorizontalBox.h"
 #include "Components/TextBlock.h"
+#include "Components/Border.h"
 
 #include "MVSkillAcquired.generated.h"
 
@@ -27,32 +28,35 @@ protected:
 	FText FT_Gothic_Letters_Font_Path = FText::FromString(TEXT("Font'/Game/Fonts/FT_Gothic_Letters_Font.FT_Gothic_Letters_Font'"));
 	FText T_Icon_DoubleJump_Path = FText::FromString(TEXT("Texture2D'/Game/Textures/T_Icon_DoubleJump.T_Icon_DoubleJump'"));
 
-	UPROPERTY(meta = (BindWidget), Category="CanvasPanel")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category="CanvasPanel")
 	UCanvasPanel* CanvasPanel;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|BackgroundBlur")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|BackgroundBlur")
 	UBackgroundBlur* BackgroundBlur;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay")
 	UOverlay* Skill_Overlay;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_BG_Image")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_BG_Image")
 	UImage* Skill_BG_Image;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_FG_Image")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_FG_Image")
 	UImage* Skill_FG_Image;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box")
 	UHorizontalBox* Skill_Learned_Box;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box|Skill_Icon_Left")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box|Skill_Icon_Left")
 	UImage* Skill_Icon_Left;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box|Skill_Learned_Text")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box|Skill_Learned_Text")
 	UTextBlock* Skill_Learned_Text;
 
-	UPROPERTY(meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box|Skill_Icon_Right")
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay|Skill_Learned_Box|Skill_Icon_Right")
 	UImage* Skill_Icon_Right;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|ScreenshotBorder")
+	UBorder* ScreenshotBorder;
 
 	virtual void NativeOnInitialized() override;
 };
