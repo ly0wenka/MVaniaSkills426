@@ -32,11 +32,11 @@ void UMVSkillAcquired::NativeOnInitialized()
 	 
 	Skill->SetAnchorsInViewport(FAnchors(0.f, 0.f, 1.f, 0.f));
 	Skill->Visibility = ESlateVisibility::Visible;
-*/
+	
 	Skill_BG_Image = NewObject<UImage>(this);
 	Skill_BG_Image->SetColorAndOpacity(FLinearColor(0.15f, 0.15f, 0.f, 1.f));
 	Skill_BG_Image->SetVisibility(ESlateVisibility::Visible);
-/*
+	
 	if (UPanelWidget* ParentContainer = Cast<UPanelWidget>(GetRootWidget()))
 	{
 		ParentContainer->AddChild(Skill_BG_Image);
@@ -44,10 +44,7 @@ void UMVSkillAcquired::NativeOnInitialized()
 	Skill_BG_Image->SetHorizontalAlignment(EHorizontalAlignment::HAlign_Fill);
 	Skill_BG_Image->SetVerticalAlignment(EVerticalAlignment::VAlign_Fill);
 
-
-*/
 	ScreenshotBorder->SetContentColorAndOpacity(FLinearColor(0.15f, 0.15f, 0.f, 1.f));
-	/*
 
 	if (UCanvasPanelSlot* CanvasSlot = Cast<UCanvasPanelSlot>(ScreenshotBorder->Slot))
 	{
@@ -69,17 +66,6 @@ FSTR_SkillData UMVSkillAcquired::FindSTR_SkillData()
 	FSTR_SkillData* STR_SkillData = MVCharacter->SkillAcquiredMap.Find(MVCharacter->SkillAcquired);
 	return *STR_SkillData;
 }
-
-FText UMVSkillAcquired::GetTitle()
-{
-	return FindSTR_SkillData().Title;
-}
-
-FSlateColor UMVSkillAcquired::GetSkillFontColor()
-{
-	return FindSTR_SkillData().SkillFontColor;
-}
-
 
 /*
 3 Tint 0.15 0.15 0 1

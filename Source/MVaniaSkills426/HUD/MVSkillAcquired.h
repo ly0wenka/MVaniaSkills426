@@ -15,6 +15,8 @@
 #include "Components/VerticalBox.h"
 #include "../MVTypes.h"
 #include "../MVCharacter.h"
+#include "Styling/SlateBrush.h"
+#include "Styling/SlateColor.h"
 #include "MVSkillAcquired.generated.h"
 
 DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FOnSkill_Learned_Text_ChangedSignature);
@@ -119,8 +121,20 @@ protected:
 	FSTR_SkillData FindSTR_SkillData();
 
 	UFUNCTION(BlueprintCallable)
-	FText GetTitle();
+	FText GetTitle() { return FindSTR_SkillData().Title; }
 
 	UFUNCTION(BlueprintCallable)
-	FSlateColor GetSkillFontColor();
+    FSlateBrush GetInputButton() { return FindSTR_SkillData().InputButton; }
+
+    UFUNCTION(BlueprintCallable)
+    FSlateBrush GetSkillIcon() { return FindSTR_SkillData().SkillIcon; }
+
+    UFUNCTION(BlueprintCallable)
+    FSlateBrush GetSkillImage() { return FindSTR_SkillData().SkillImage; }
+
+    UFUNCTION(BlueprintCallable)
+    FSlateBrush GetSkillBorderColor() { return FindSTR_SkillData().SkillBorderColor; }
+
+    UFUNCTION(BlueprintCallable)
+    FSlateColor GetSkillFontColor() { return FindSTR_SkillData().SkillFontColor; }
 };
