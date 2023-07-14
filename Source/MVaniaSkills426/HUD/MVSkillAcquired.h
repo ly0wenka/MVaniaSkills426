@@ -123,6 +123,9 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	FText GetTitle() { return FindSTR_SkillData().Title; }
 
+    UFUNCTION(BlueprintCallable)
+    FText GetDescription() { return FindSTR_SkillData().Description; }
+
 	UFUNCTION(BlueprintCallable)
     FSlateBrush GetInputButton() { return FindSTR_SkillData().InputButton; }
 

@@ -9,6 +9,7 @@ AMVCharacter::AMVCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	SkillAcquiredMap[E_Skills::DoubleJump].Title = FText::FromString(TEXT("Learned Double Jump!"));
+	SkillAcquiredMap[E_Skills::DoubleJump].Description = FText::FromString(TEXT("Allows player to jump again in mid-air."));
 	SkillAcquiredMap[E_Skills::DoubleJump].InputButton.SetResourceObject(LoadObject<UTexture2D>(this, 
 		TEXT("Texture2D'/Game/Textures/T_Button_A.T_Button_A'")));
 	SkillAcquiredMap[E_Skills::DoubleJump].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
@@ -17,6 +18,7 @@ AMVCharacter::AMVCharacter()
 		TEXT("Texture2D'/Game/Textures/T_Image_DoubleJump.T_Image_DoubleJump'")));
 
 	SkillAcquiredMap[E_Skills::BackDash].Title = FText::FromString(TEXT("Learned Back Dash!"));
+	SkillAcquiredMap[E_Skills::BackDash].Description = FText::FromString(TEXT("Back Dash!"));
 	SkillAcquiredMap[E_Skills::BackDash].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Button_Y.T_Button_Y'")));
 	SkillAcquiredMap[E_Skills::BackDash].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
@@ -25,6 +27,7 @@ AMVCharacter::AMVCharacter()
 		TEXT("Texture2D'/Game/Textures/T_Image_BackDash.T_Image_BackDash'")));
 
 	SkillAcquiredMap[E_Skills::Fireball].Title = FText::FromString(TEXT("Learned Fireball!"));
+	SkillAcquiredMap[E_Skills::Fireball].Description = FText::FromString(TEXT("Unleash the power of the elements with Cast Out Ranged Fireball!"));
 	SkillAcquiredMap[E_Skills::Fireball].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
 	SkillAcquiredMap[E_Skills::Fireball].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
@@ -45,6 +48,7 @@ AMVCharacter::AMVCharacter()
 		TEXT("Texture2D'/Game/Textures/T_Fireball.T_Fireball'")));
 
 	SkillAcquiredMap[E_Skills::ElectroSpark].Title = FText::FromString(TEXT("Learned ElectroSpark!"));
+	SkillAcquiredMap[E_Skills::ElectroSpark].Description = FText::FromString(TEXT("This ElectroSpark spell allows you to conjure a fiery projectile and hurl it at your enemies from a distance. Harnessing the forces of fire, you can rain down destruction upon your foes with precision and intensity."));
 	SkillAcquiredMap[E_Skills::ElectroSpark].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
 	SkillAcquiredMap[E_Skills::ElectroSpark].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
@@ -79,6 +83,7 @@ AMVCharacter::AMVCharacter()
 		TEXT("Texture2D'/Game/Textures/T_ArcticBlast.T_ArcticBlast'")));
 
 	SkillAcquiredMap[E_Skills::LensOfTruth].Title = FText::FromString(TEXT("Learned LensOfTruth!"));
+	SkillAcquiredMap[E_Skills::LensOfTruth].Description = FText::FromString(TEXT("LensOfTruth!"));
 	SkillAcquiredMap[E_Skills::LensOfTruth].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LTrigger_01.T_LTrigger_01'")));
 	SkillAcquiredMap[E_Skills::LensOfTruth].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
@@ -100,6 +105,7 @@ AMVCharacter::AMVCharacter()
 	WMagicMap[E_WMagic::LensOfTruth].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
 
 	SkillAcquiredMap[E_Skills::Mist].Title = FText::FromString(TEXT("Learned Mist!"));
+	SkillAcquiredMap[E_Skills::Mist].Description = FText::FromString(TEXT("Mist!"));
 	SkillAcquiredMap[E_Skills::Mist].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LTrigger_01.T_LTrigger_01'")));
 	SkillAcquiredMap[E_Skills::Mist].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
