@@ -132,4 +132,42 @@ void UMVSkillAcquired::NativeOnInitialized()
 7 Size 20
 8 Justification Center
 9 Auto Wrap Text = true
+
+53
+1 Copy Desc_Overlay Attributes_Overlay
+2 -955 -110 450 490
+3 delete Descr_Text
+
+1 Vertical Attributes_Box
+2 50 70 50 50 HA Center
+3 VA Fill
+
+1 Text
+2 ManaCost
+3 Text Mana Cost
+4 Color 0 0 0 1 FT_Gothic_Numbers_Font Size 35
+
+1 Text Mana_Value
+2 ha center va fill text 99
+3 000 1 font gothic nmbr Size 30
+
+Back_Overlay
+2 bot right
+3 150 -75 250 80 .5 .5
+
+1 Back_Image 25 10 165 10 va center T_Button_B
+
+1 BackButton ha fill va fill Style Normal Image T_Menu_Button
+2 Draw As Image
+3 Hovered Image T_Menu_Button
+3.5 See 2 Pressed See 1
+4 Pressed Sound
+5 Click_on_Button_Cue
+6 Hovered Sound Floating_UI_Open-002
+
+1 bck btn | bck txt Back_Text
+2 10 0 0 0
+3 txt OK clr 1 1 0 1
+4 Size 30
+5 Outline Size 4
 */

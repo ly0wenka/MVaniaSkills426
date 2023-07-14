@@ -11,6 +11,8 @@
 #include "Components/HorizontalBox.h"
 #include "Components/TextBlock.h"
 #include "Components/Border.h"
+#include "Components/Button.h"
+#include "Components/VerticalBox.h"
 
 #include "MVSkillAcquired.generated.h"
 
@@ -29,10 +31,10 @@ protected:
 	FText T_Icon_DoubleJump_Path = FText::FromString(TEXT("Texture2D'/Game/Textures/T_Icon_DoubleJump.T_Icon_DoubleJump'"));
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category="CanvasPanel")
-	UCanvasPanel* CanvasPanel;
+	UCanvasPanel* Canvas_Panel;
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|BackgroundBlur")
-	UBackgroundBlur* BackgroundBlur;
+	UBackgroundBlur* Background_Blur;
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Skill_Overlay")
 	UOverlay* Skill_Overlay;
@@ -75,6 +77,36 @@ protected:
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Description_Image")
 	UImage* Description_Image;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Description_Text")
+	UTextBlock* Description_Text;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Attributes_Overlay")
+	UOverlay* Attributes_Overlay;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Image")
+	UImage* Attributes_Image;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box")
+	UVerticalBox* Attributes_Box;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box|ManaCost")
+	UTextBlock* ManaCost;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box|Mana_Value")
+	UTextBlock* Mana_Value;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box|Back_Overlay")
+	UOverlay* Back_Overlay;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box|Back_Overlay|Back_Image")
+	UImage* Back_Image;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box|Back_Overlay|BackButton")
+	UButton* BackButton;
+
+	UPROPERTY(EditAnywhere, meta = (BindWidget), Category = "CanvasPanel|Description_Overlay|Attributes_Box|Back_Overlay|BackButton|Back_Text")
+	UTextBlock* Back_Text;
 
 	virtual void NativeOnInitialized() override;
 };
