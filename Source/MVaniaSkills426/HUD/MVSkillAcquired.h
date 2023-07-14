@@ -13,8 +13,11 @@
 #include "Components/Border.h"
 #include "Components/Button.h"
 #include "Components/VerticalBox.h"
-
+#include "../MVTypes.h"
+#include "../MVCharacter.h"
 #include "MVSkillAcquired.generated.h"
+
+DECLARE_DYNAMIC_DELEGATE_RetVal(FText, FOnSkill_Learned_Text_ChangedSignature);
 
 /**
  * 
@@ -109,4 +112,15 @@ protected:
 	UTextBlock* Back_Text;
 
 	virtual void NativeOnInitialized() override;
+
+	FOnSkill_Learned_Text_ChangedSignature OnSkill_Learned_Text_ChangedDelegate;
+
+	UFUNCTION(BlueprintCallable)
+	FSTR_SkillData FindSTR_SkillData();
+
+	UFUNCTION(BlueprintCallable)
+	FText GetTitle();
+
+	UFUNCTION(BlueprintCallable)
+	FSlateColor GetSkillFontColor();
 };

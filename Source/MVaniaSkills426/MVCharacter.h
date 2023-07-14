@@ -39,23 +39,15 @@ public:
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
 	bool bHasDoubleJump;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
-	FSTR_SkillData DoubleJumpData;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
 	bool bHasBackDash;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
-	FSTR_SkillData BackDashData;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	bool bHasBMagicFireball;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
-	FSTR_SkillData BMagicFireballData;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	bool bHasBMagicElectroSpark;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
-	FSTR_SkillData BMagicElectroSparkData;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
 	bool bHasBMagicBloodlust;
@@ -71,8 +63,6 @@ public:
 	float LensOfTruthActiveTimePercent = 1.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
 	float LensOfTruthCooldownTimePercent = 0.0f;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - LensOfTruth")
-	FSTR_SkillData WMagicLensOfTruthData;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	bool bHasWMagicMist;
@@ -82,8 +72,6 @@ public:
 	float MistActiveTimePercent = 1.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
 	float MistCooldownTimePercent = 0.0f;
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Mist")
-	FSTR_SkillData WMagicMistData;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - Shield")
 	bool bHasWMagicShield = true;
@@ -110,5 +98,15 @@ public:
 		{E_WMagic::Mist, FSTR_MagicAttributes()},
 		{E_WMagic::Shield, FSTR_MagicAttributes()},
 		{E_WMagic::TimeSlow, FSTR_MagicAttributes()}
+	};
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - SkillAcquiredMap")
+	TMap<E_Skills, FSTR_SkillData> SkillAcquiredMap = {
+		{E_Skills::None, FSTR_SkillData()},
+		{E_Skills::DoubleJump, FSTR_SkillData()},
+		{E_Skills::BackDash, FSTR_SkillData()},
+		{E_Skills::Fireball, FSTR_SkillData()},
+		{E_Skills::ElectroSpark, FSTR_SkillData()},
+		{E_Skills::LensOfTruth, FSTR_SkillData()},
+		{E_Skills::Mist, FSTR_SkillData()}
 	};
 };

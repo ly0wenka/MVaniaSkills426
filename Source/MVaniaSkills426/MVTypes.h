@@ -11,7 +11,7 @@
 #include "Engine/Texture2D.h"
 #include "Styling/SlateBrush.h"
 #include "Styling/SlateColor.h"
-
+#include "UObject/Object.h"
 #include "MVTypes.generated.h"
 
 UENUM(BlueprintType)

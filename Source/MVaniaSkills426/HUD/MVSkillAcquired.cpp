@@ -8,6 +8,7 @@
 #include "Components/CanvasPanelSlot.h"
 #include "Widgets/Input/SButton.h"
 #include "Templates/SharedPointer.h"
+#include "Kismet/GameplayStatics.h"
 
 void UMVSkillAcquired::NativeOnInitialized()
 {
@@ -58,8 +59,27 @@ void UMVSkillAcquired::NativeOnInitialized()
 		CanvasSlot->SetAlignment(FVector2D(0.5f, 0.5f));
 	}
 */
-
+	//OnSkill_Learned_Text_ChangedDelegate.AddUObject(this, &UMVSkillAcquired::GetTitle);
 }
+
+FSTR_SkillData UMVSkillAcquired::FindSTR_SkillData()
+{
+	ACharacter* Character = UGameplayStatics::GetPlayerCharacter(this, 0);
+	AMVCharacter* MVCharacter = Cast<AMVCharacter>(Character);
+	FSTR_SkillData* STR_SkillData = MVCharacter->SkillAcquiredMap.Find(MVCharacter->SkillAcquired);
+	return *STR_SkillData;
+}
+
+FText UMVSkillAcquired::GetTitle()
+{
+	return FindSTR_SkillData().Title;
+}
+
+FSlateColor UMVSkillAcquired::GetSkillFontColor()
+{
+	return FindSTR_SkillData().SkillFontColor;
+}
+
 
 /*
 3 Tint 0.15 0.15 0 1
