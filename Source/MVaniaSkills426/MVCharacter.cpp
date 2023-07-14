@@ -28,7 +28,7 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::Fireball].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
 	SkillAcquiredMap[E_Skills::Fireball].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_Fireball.T_Fireball'")));
+		TEXT("Texture2D'/Game/Textures/T_Icon_Fireball.T_Icon_Fireball'")));
 		SkillAcquiredMap[E_Skills::Fireball].SkillIcon.SetImageSize(FVector2D(200.f, 200.f));
 	SkillAcquiredMap[E_Skills::Fireball].SkillImage.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Image_Fireball.T_Image_Fireball'")));
@@ -48,7 +48,7 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::ElectroSpark].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_RTrigger_01.T_RTrigger_01'")));
 	SkillAcquiredMap[E_Skills::ElectroSpark].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_ElectroSpark.T_ElectroSpark'")));
+		TEXT("Texture2D'/Game/Textures/T_Icon_ElectroSpark.T_Icon_ElectroSpark'")));
 		SkillAcquiredMap[E_Skills::ElectroSpark].SkillIcon.SetImageSize(FVector2D(200.f, 200.f));
 	SkillAcquiredMap[E_Skills::ElectroSpark].SkillImage.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Image_ElectroSpark.T_Image_ElectroSpark'")));
@@ -82,7 +82,7 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::LensOfTruth].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LTrigger_01.T_LTrigger_01'")));
 	SkillAcquiredMap[E_Skills::LensOfTruth].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_LensOfTruth.T_LensOfTruth'")));
+		TEXT("Texture2D'/Game/Textures/T_Icon_LensOfTruth.T_Icon_LensOfTruth'")));
 	SkillAcquiredMap[E_Skills::LensOfTruth].SkillIcon.SetImageSize(FVector2D(200.f, 200.f));
 	SkillAcquiredMap[E_Skills::LensOfTruth].SkillImage.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Image_LensOfTruth.T_Image_LensOfTruth'")));
@@ -103,7 +103,7 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::Mist].InputButton.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LTrigger_01.T_LTrigger_01'")));
 	SkillAcquiredMap[E_Skills::Mist].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_Mist.T_Mist'")));
+		TEXT("Texture2D'/Game/Textures/T_Icon_Mist.T_Icon_Mist'")));
 	SkillAcquiredMap[E_Skills::Mist].SkillIcon.SetImageSize(FVector2D(200.f, 200.f));
 	SkillAcquiredMap[E_Skills::Mist].SkillImage.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Image_Mist.T_Image_Mist'")));
