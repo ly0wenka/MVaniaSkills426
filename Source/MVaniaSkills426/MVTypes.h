@@ -14,37 +14,54 @@
 #include "UObject/Object.h"
 #include "MVTypes.generated.h"
 
-UENUM(BlueprintType)
+UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
 enum class E_BMagic : uint8
 {
-    None,
-    Fireball,
-    ElectroSpark,
-    Bloodlust,
-    ArcticBlast
+    None = 0,
+    Fireball = 1 << 3,
+    ElectroSpark = 1 << 4,
+    Bloodlust = 1 << 5,
+    ArcticBlast = 1 << 6,
 };
+ENUM_CLASS_FLAGS(E_BMagic);
 
-UENUM(BlueprintType)
+UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
 enum class E_WMagic : uint8
 {
-    None,
-    LensOfTruth,
-    Mist,
-    Shield,
-    TimeSlow
+    None = 0,
+    LensOfTruth = 1 << 7,
+    Mist = 2 << 0,
+    Shield = 2 << 1,
+    TimeSlow = 2 << 2
 };
+ENUM_CLASS_FLAGS(E_WMagic);
 
-UENUM(BlueprintType)
+UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
+enum class E_Magic_Type : uint8
+{
+    WMagic = 0,
+    BMagic = 1 << 0,
+};
+ENUM_CLASS_FLAGS(E_Magic_Type);
+
+UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
 enum class E_Skills : uint8
 {
-    None,
-    DoubleJump,
-    BackDash,
-    Fireball,
-    ElectroSpark,
-    LensOfTruth,
-    Mist
+    None = 0,
+    DoubleJump = 1 << 1,
+    BackDash = 1 << 2,
+    Fireball = E_BMagic::Fireball,
+    ElectroSpark = 1 << 4,
+    Bloodlust = 1 << 5,
+    ArcticBlast = 1 << 6,
+    LensOfTruth = E_WMagic::LensOfTruth,
+    Mist = 2 << 0,
+    Shield = 2 << 1,
+    TimeSlow = 2 << 2,
+    WMagic = LensOfTruth | Mist | Shield | TimeSlow,
+    BMagic = Fireball | ElectroSpark | Bloodlust | ArcticBlast,
 };
+ENUM_CLASS_FLAGS(E_Skills);
 
 UCLASS()
 class MVANIASKILLS426_API UDamage_Lightning : public UDamageType
@@ -125,4 +142,7 @@ struct MVANIASKILLS426_API FSTR_MagicAttributes
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     TSubclassOf<UDamageType> DamageType;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    E_Magic_Type MagicType;
 };

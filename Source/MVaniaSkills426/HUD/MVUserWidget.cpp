@@ -18,7 +18,7 @@ FSlateBrush UMVUserWidget::GetWhiteMagicImage() const
 	const auto lC = Cast<AMVCharacter>(GetOwningPlayerPawn());
 	if (!lC) return MagicEmpty;
 	const auto slot = lC->WMagicSlotted;
-	return slot == E_WMagic::None ? MagicEmpty : lC->WMagicMap[slot].IconSlate;
+	return slot == E_WMagic::None ? MagicEmpty : lC->MagicMap[static_cast<E_Skills>(slot)].IconSlate;
 }
 
 float UMVUserWidget::GetWhiteMagicPercent() const
@@ -55,7 +55,7 @@ float UMVUserWidget::GetWhiteMagicManacost() const
 	const auto lC = Cast<AMVCharacter>(GetOwningPlayerPawn());
 	if (!lC) return Empty;
 	const auto slot = lC->WMagicSlotted;
-	return slot == E_WMagic::None ? Empty : lC->WMagicMap[slot].ManaCost;
+	return slot == E_WMagic::None ? Empty : lC->MagicMap[static_cast<E_Skills>(slot)].ManaCost;
 }
 
 FText UMVUserWidget::GetWhiteMagicManacostFText() const
@@ -68,7 +68,7 @@ FSlateBrush UMVUserWidget::GetBlackMagicImage() const
 	const auto lC = Cast<AMVCharacter>(GetOwningPlayerPawn());
 	if (!lC) return MagicEmpty;
 	const auto slot = lC->BMagicSlotted;
-	return slot == E_BMagic::None ? MagicEmpty : lC->BMagicMap[slot].IconSlate;
+	return slot == E_BMagic::None ? MagicEmpty : lC->MagicMap[static_cast<E_Skills>(slot)].IconSlate;
 }
 
 float UMVUserWidget::GetBlackMagicManacost() const
@@ -76,7 +76,7 @@ float UMVUserWidget::GetBlackMagicManacost() const
 	const auto lC = Cast<AMVCharacter>(GetOwningPlayerPawn());
 	if (!lC) return Empty;
 	const auto slot = lC->BMagicSlotted;
-	return slot == E_BMagic::None ? Empty : lC->BMagicMap[slot].ManaCost;
+	return slot == E_BMagic::None ? Empty : lC->MagicMap[static_cast<E_Skills>(slot)].ManaCost;
 }
 
 FText UMVUserWidget::GetBlackMagicManacostFText() const

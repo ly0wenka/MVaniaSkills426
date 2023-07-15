@@ -83,21 +83,17 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White - TimeSlow")
 	float TimeSlowCooldownTimePercent = 0.0f;
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black")
-	TMap<E_BMagic, FSTR_MagicAttributes> BMagicMap = {
-		{E_BMagic::None, FSTR_MagicAttributes()},
-		{E_BMagic::Fireball, FSTR_MagicAttributes()},
-		{E_BMagic::ElectroSpark, FSTR_MagicAttributes()},
-		{E_BMagic::Bloodlust, FSTR_MagicAttributes()},
-		{E_BMagic::ArcticBlast, FSTR_MagicAttributes()}
-	};
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic White")
-	TMap<E_WMagic, FSTR_MagicAttributes> WMagicMap = {
-		{E_WMagic::None, FSTR_MagicAttributes()},
-		{E_WMagic::LensOfTruth, FSTR_MagicAttributes()},
-		{E_WMagic::Mist, FSTR_MagicAttributes()},
-		{E_WMagic::Shield, FSTR_MagicAttributes()},
-		{E_WMagic::TimeSlow, FSTR_MagicAttributes()}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic")
+	TMap<E_Skills, FSTR_MagicAttributes> MagicMap = {
+		{E_Skills::None, FSTR_MagicAttributes()},
+		{E_Skills::Fireball, FSTR_MagicAttributes()},
+		{E_Skills::ElectroSpark, FSTR_MagicAttributes()},
+		{E_Skills::Bloodlust, FSTR_MagicAttributes()},
+		{E_Skills::ArcticBlast, FSTR_MagicAttributes()},
+		{E_Skills::LensOfTruth, FSTR_MagicAttributes()},
+		{E_Skills::Mist, FSTR_MagicAttributes()},
+		{E_Skills::Shield, FSTR_MagicAttributes()},
+		{E_Skills::TimeSlow, FSTR_MagicAttributes()}
 	};
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - SkillAcquiredMap")
 	TMap<E_Skills, FSTR_SkillData> SkillAcquiredMap = {

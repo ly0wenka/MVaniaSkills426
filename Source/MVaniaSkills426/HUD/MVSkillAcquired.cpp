@@ -67,6 +67,14 @@ FSTR_SkillData UMVSkillAcquired::FindSTR_SkillData()
 	return *STR_SkillData;
 }
 
+FSTR_MagicAttributes UMVSkillAcquired::FindSTR_MagicAttributes()
+{
+	ACharacter* Character = UGameplayStatics::GetPlayerCharacter(this, 0);
+	AMVCharacter* MVCharacter = Cast<AMVCharacter>(Character);
+	FSTR_MagicAttributes* STR_MagicAttributes = MVCharacter->MagicMap.Find(MVCharacter->SkillAcquired);
+	return *STR_MagicAttributes;
+}
+
 /*
 3 Tint 0.15 0.15 0 1
 2 HAlign_Fill VAlign_Fill

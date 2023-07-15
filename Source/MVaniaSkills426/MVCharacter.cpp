@@ -40,11 +40,12 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::Fireball].SkillFontColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	SkillAcquiredMap[E_Skills::Fireball].bMagicSkill = true;
 
-	BMagicMap[E_BMagic::Fireball].Name = FText::FromString(TEXT("Fireball"));
-	BMagicMap[E_BMagic::Fireball].ManaCost = 5;
-	BMagicMap[E_BMagic::Fireball].Damage = 50;
-	BMagicMap[E_BMagic::Fireball].DamageType = UDamage_Fire::StaticClass();
-	BMagicMap[E_BMagic::Fireball].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::Fireball].Name = FText::FromString(TEXT("Fireball"));
+	MagicMap[E_Skills::Fireball].ManaCost = 5;
+	MagicMap[E_Skills::Fireball].Damage = 50;
+	MagicMap[E_Skills::Fireball].DamageType = UDamage_Fire::StaticClass();
+	MagicMap[E_Skills::Fireball].MagicType = E_Magic_Type::BMagic;
+	MagicMap[E_Skills::Fireball].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Fireball.T_Fireball'")));
 
 	SkillAcquiredMap[E_Skills::ElectroSpark].Title = FText::FromString(TEXT("Learned ElectroSpark!"));
@@ -61,26 +62,29 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::ElectroSpark].SkillFontColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	SkillAcquiredMap[E_Skills::ElectroSpark].bMagicSkill = true;
 
-	BMagicMap[E_BMagic::ElectroSpark].Name = FText::FromString(TEXT("ElectroSpark"));
-	BMagicMap[E_BMagic::ElectroSpark].ManaCost = 25;
-	BMagicMap[E_BMagic::ElectroSpark].Damage = 100;
-	BMagicMap[E_BMagic::ElectroSpark].DamageType = UDamage_Lightning::StaticClass();
-	BMagicMap[E_BMagic::ElectroSpark].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::ElectroSpark].Name = FText::FromString(TEXT("ElectroSpark"));
+	MagicMap[E_Skills::ElectroSpark].ManaCost = 25;
+	MagicMap[E_Skills::ElectroSpark].Damage = 100;
+	MagicMap[E_Skills::ElectroSpark].DamageType = UDamage_Lightning::StaticClass();
+	MagicMap[E_Skills::ElectroSpark].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_ElectroSpark.T_ElectroSpark'")));
+	MagicMap[E_Skills::ElectroSpark].MagicType = E_Magic_Type::BMagic;
 
-	BMagicMap[E_BMagic::Bloodlust].Name = FText::FromString(TEXT("Bloodlust"));
-	BMagicMap[E_BMagic::Bloodlust].ManaCost = 50;
-	BMagicMap[E_BMagic::Bloodlust].Damage = 200;
-	BMagicMap[E_BMagic::Bloodlust].DamageType = UDamage_Blood::StaticClass();
-	BMagicMap[E_BMagic::Bloodlust].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::Bloodlust].Name = FText::FromString(TEXT("Bloodlust"));
+	MagicMap[E_Skills::Bloodlust].ManaCost = 50;
+	MagicMap[E_Skills::Bloodlust].Damage = 200;
+	MagicMap[E_Skills::Bloodlust].DamageType = UDamage_Blood::StaticClass();
+	MagicMap[E_Skills::Bloodlust].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Bloodlust.T_Bloodlust'")));
+	MagicMap[E_Skills::Bloodlust].MagicType = E_Magic_Type::BMagic;
 
-	BMagicMap[E_BMagic::ArcticBlast].Name = FText::FromString(TEXT("ArcticBlast"));
-	BMagicMap[E_BMagic::ArcticBlast].ManaCost = 25;
-	BMagicMap[E_BMagic::ArcticBlast].Damage = 10;
-	BMagicMap[E_BMagic::ArcticBlast].DamageType = UDamage_Ice::StaticClass();
-	BMagicMap[E_BMagic::ArcticBlast].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::ArcticBlast].Name = FText::FromString(TEXT("ArcticBlast"));
+	MagicMap[E_Skills::ArcticBlast].ManaCost = 25;
+	MagicMap[E_Skills::ArcticBlast].Damage = 10;
+	MagicMap[E_Skills::ArcticBlast].DamageType = UDamage_Ice::StaticClass();
+	MagicMap[E_Skills::ArcticBlast].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_ArcticBlast.T_ArcticBlast'")));
+	MagicMap[E_Skills::ArcticBlast].MagicType = E_Magic_Type::BMagic;
 
 	SkillAcquiredMap[E_Skills::LensOfTruth].Title = FText::FromString(TEXT("Learned LensOfTruth!"));
 	SkillAcquiredMap[E_Skills::LensOfTruth].Description = FText::FromString(TEXT("LensOfTruth!"));
@@ -96,13 +100,14 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::LensOfTruth].SkillFontColor = FSlateColor(FLinearColor(.7f, .7f, 1.0f));
 	SkillAcquiredMap[E_Skills::LensOfTruth].bMagicSkill = true;
 
-	WMagicMap[E_WMagic::LensOfTruth].Name = FText::FromString(TEXT("LensOfTruth"));
-	WMagicMap[E_WMagic::LensOfTruth].ManaCost = 10;
-	WMagicMap[E_WMagic::LensOfTruth].Damage = 0;
-	WMagicMap[E_WMagic::LensOfTruth].DamageType = UDamage_White::StaticClass();
-	WMagicMap[E_WMagic::LensOfTruth].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::LensOfTruth].Name = FText::FromString(TEXT("LensOfTruth"));
+	MagicMap[E_Skills::LensOfTruth].ManaCost = 10;
+	MagicMap[E_Skills::LensOfTruth].Damage = 0;
+	MagicMap[E_Skills::LensOfTruth].DamageType = UDamage_White::StaticClass();
+	MagicMap[E_Skills::LensOfTruth].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_LensOfTruth.T_LensOfTruth'")));
-	WMagicMap[E_WMagic::LensOfTruth].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::LensOfTruth].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::LensOfTruth].MagicType = E_Magic_Type::WMagic;
 
 	SkillAcquiredMap[E_Skills::Mist].Title = FText::FromString(TEXT("Learned Mist!"));
 	SkillAcquiredMap[E_Skills::Mist].Description = FText::FromString(TEXT("Mist!"));
@@ -118,29 +123,32 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::Mist].SkillFontColor = FSlateColor(FLinearColor(.7f, .7f, 1.0f));
 	SkillAcquiredMap[E_Skills::Mist].bMagicSkill = true;
 
-	WMagicMap[E_WMagic::Mist].Name = FText::FromString(TEXT("Mist"));
-	WMagicMap[E_WMagic::Mist].ManaCost = 10;
-	WMagicMap[E_WMagic::Mist].Damage = 0;
-	WMagicMap[E_WMagic::Mist].DamageType = UDamage_White::StaticClass();
-	WMagicMap[E_WMagic::Mist].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::Mist].Name = FText::FromString(TEXT("Mist"));
+	MagicMap[E_Skills::Mist].ManaCost = 10;
+	MagicMap[E_Skills::Mist].Damage = 0;
+	MagicMap[E_Skills::Mist].DamageType = UDamage_White::StaticClass();
+	MagicMap[E_Skills::Mist].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Mist.T_Mist'")));
-	WMagicMap[E_WMagic::Mist].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::Mist].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::Mist].MagicType = E_Magic_Type::WMagic;
 
-	WMagicMap[E_WMagic::Shield].Name = FText::FromString(TEXT("Shield"));
-	WMagicMap[E_WMagic::Shield].ManaCost = 10;
-	WMagicMap[E_WMagic::Shield].Damage = 0;
-	WMagicMap[E_WMagic::Shield].DamageType = UDamage_White::StaticClass();
-	WMagicMap[E_WMagic::Shield].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::Shield].Name = FText::FromString(TEXT("Shield"));
+	MagicMap[E_Skills::Shield].ManaCost = 10;
+	MagicMap[E_Skills::Shield].Damage = 0;
+	MagicMap[E_Skills::Shield].DamageType = UDamage_White::StaticClass();
+	MagicMap[E_Skills::Shield].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_Shield.T_Shield'")));
-	WMagicMap[E_WMagic::Shield].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::Shield].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::Shield].MagicType = E_Magic_Type::WMagic;
 
-	WMagicMap[E_WMagic::TimeSlow].Name = FText::FromString(TEXT("TimeSlow"));
-	WMagicMap[E_WMagic::TimeSlow].ManaCost = 20;
-	WMagicMap[E_WMagic::TimeSlow].Damage = 0;
-	WMagicMap[E_WMagic::TimeSlow].DamageType = UDamage_White::StaticClass();
-	WMagicMap[E_WMagic::TimeSlow].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+	MagicMap[E_Skills::TimeSlow].Name = FText::FromString(TEXT("TimeSlow"));
+	MagicMap[E_Skills::TimeSlow].ManaCost = 20;
+	MagicMap[E_Skills::TimeSlow].Damage = 0;
+	MagicMap[E_Skills::TimeSlow].DamageType = UDamage_White::StaticClass();
+	MagicMap[E_Skills::TimeSlow].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
 		TEXT("Texture2D'/Game/Textures/T_TimeSlow.T_TimeSlow'")));
-	WMagicMap[E_WMagic::TimeSlow].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::TimeSlow].IconSlate.SetImageSize(FVector2D(150.f, 150.f));
+	MagicMap[E_Skills::TimeSlow].MagicType = E_Magic_Type::WMagic;
 }
 
 // Called when the game starts or when spawned

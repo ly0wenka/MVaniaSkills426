@@ -140,4 +140,25 @@ protected:
 
     UFUNCTION(BlueprintCallable)
     FSlateColor GetSkillFontColor() { return FindSTR_SkillData().SkillFontColor; }
+
+    UFUNCTION(BlueprintCallable)
+    bool GetIsMagicSkill() { return FindSTR_SkillData().bMagicSkill; }
+
+    UFUNCTION(BlueprintCallable)
+	FSTR_MagicAttributes FindSTR_MagicAttributes();
+
+    UFUNCTION(BlueprintCallable)
+    FText GetName() { return FindSTR_MagicAttributes().Name; }
+
+    UFUNCTION(BlueprintCallable)
+    FSlateBrush GetIconSlate() { return FindSTR_MagicAttributes().IconSlate; }
+
+    UFUNCTION(BlueprintCallable)
+	FText GetManaCost() { return FText::AsNumber(FindSTR_MagicAttributes().ManaCost); }
+
+    UFUNCTION(BlueprintCallable)
+    FText GetDamage() { return FText::AsNumber(FindSTR_MagicAttributes().Damage); }
+
+    UFUNCTION(BlueprintCallable)
+    E_Magic_Type GetMagicType() { return FindSTR_MagicAttributes().MagicType; }
 };
