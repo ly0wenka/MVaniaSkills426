@@ -105,4 +105,9 @@ public:
 		{E_Skills::LensOfTruth, FSTR_SkillData()},
 		{E_Skills::Mist, FSTR_SkillData()}
 	};
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Interact")
+	bool bCanInteract;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Interact")
+	int32 InteractTraceLength = 100;
 };

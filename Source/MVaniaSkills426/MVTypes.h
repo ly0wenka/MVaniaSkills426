@@ -12,6 +12,7 @@
 #include "Styling/SlateBrush.h"
 #include "Styling/SlateColor.h"
 #include "UObject/Object.h"
+#include "UObject/Interface.h"
 #include "MVTypes.generated.h"
 
 UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
@@ -62,6 +63,19 @@ enum class E_Skills : uint8
     BMagic = Fireball | ElectroSpark | Bloodlust | ArcticBlast,
 };
 ENUM_CLASS_FLAGS(E_Skills);
+
+UINTERFACE(BlueprintType)
+class MVANIASKILLS426_API UInteract : public UInterface {
+    GENERATED_BODY()
+};
+
+class MVANIASKILLS426_API IInteract {
+    GENERATED_BODY()
+public:
+
+    UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Interact")
+    void ObjectInteractedWith();
+};
 
 UCLASS()
 class MVANIASKILLS426_API UDamage_Lightning : public UDamageType
