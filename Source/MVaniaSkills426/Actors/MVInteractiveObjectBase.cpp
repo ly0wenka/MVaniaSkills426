@@ -9,6 +9,9 @@
 #include "WidgetBlueprint.h"
 #include "Components/Widget.h"
 #include "Blueprint/UserWidget.h"
+#include "Engine/Blueprint.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/Character.h"
 
 // Sets default values
 AMVInteractiveObjectBase::AMVInteractiveObjectBase()
@@ -34,15 +37,41 @@ void AMVInteractiveObjectBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	const UWidgetBlueprint* WidgetBlueprint = LoadObject<UWidgetBlueprint>(nullptr, TEXT("WidgetBlueprint'/Game/Notify.Notify'"));
-	if (WidgetBlueprint)
+	if (GetWorld())
 	{
-		UUserWidget* UserWidget = WidgetBlueprint->GeneratedClass->GetDefaultObject<UUserWidget>();
+		ACharacter* PlayerCharacter = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+		if (PlayerCharacter)
+		{
+			AsMVCharacter = Cast<AMVCharacter>(PlayerCharacter);
+		}
+	}
+
+	if (BP_Notify)
+	{
+		UUserWidget* UserWidget = BP_Notify->GetDefaultObject<UUserWidget>();
 		if (UserWidget)
 		{
 			UserWidget->AddToViewport();
 		}
 	}
+	else 
+	{
+		UWidgetBlueprint* WidgetBlueprint = LoadObject<UWidgetBlueprint>(nullptr, TEXT("WidgetBlueprint'/Game/Notify.Notify'"));
+		if (WidgetBlueprint)
+		{
+			UUserWidget* UserWidget = WidgetBlueprint->GeneratedClass->GetDefaultObject<UUserWidget>();
+			if (UserWidget)
+			{
+				UserWidget->AddToViewport();
+			}
+
+			if (WidgetBlueprint->GeneratedClass && WidgetBlueprint->GeneratedClass->IsChildOf(UUserWidget::StaticClass()))
+			{
+				BP_Notify = WidgetBlueprint->GeneratedClass;
+			}
+		}
+	}
+	
 	
 	/*UMVNotify* NotifyWidget = CreateWidget<UMVNotify>(GetWorld(), UMVNotify::StaticClass());
 	if (NotifyWidget)

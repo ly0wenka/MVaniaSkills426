@@ -15,6 +15,8 @@
 
 AMVSkillBase::AMVSkillBase()
 {
+	InteractColliderBox->SetRelativeLocation(FVector(0., 270., 95.));
+
 	Dias = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Dias"));
 	Dias->SetRelativeScale3D(FVector(.6,.3,.8));
 	Dias->SetStaticMesh(LoadObject<UStaticMesh>(this, TEXT(

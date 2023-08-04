@@ -7,6 +7,8 @@
 #include "GameFramework/Actor.h"
 #include "../HUD/MVNotify.h"
 #include "Sound/SoundWave.h"
+#include "Blueprint/UserWidget.h"
+#include "../MVCharacter.h"
 #include "MVInteractiveObjectBase.generated.h"
 
 UCLASS()
@@ -26,15 +28,13 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
-	USceneComponent* DefaultSceneRoot;
-	UPROPERTY(VisibleAnywhere, Category = "InteractiveObjectBase")
-	UBoxComponent* InteractColliderBox;
+	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase") USceneComponent* DefaultSceneRoot;
+	UPROPERTY(VisibleAnywhere, Category = "InteractiveObjectBase") UBoxComponent* InteractColliderBox;
 
-	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
-	UMVNotify* Notify;
-	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
-	FText InteractMessage;
-	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase")
-	USoundBase* SFXCanInteract;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") UMVNotify* Notify;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") FText InteractMessage;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") USoundBase* SFXCanInteract;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") AMVCharacter* AsMVCharacter;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") TSubclassOf<AMVCharacter> BP_As_Side_Scroller_Character;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") TSubclassOf<UUserWidget> BP_Notify;
 };
