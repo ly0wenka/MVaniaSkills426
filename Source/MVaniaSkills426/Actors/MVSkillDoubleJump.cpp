@@ -18,7 +18,7 @@ AMVSkillDoubleJump::AMVSkillDoubleJump()
 	InteractMessage = FText::FromString(TEXT("Learn Skill"));
 
 	InteractColliderBox->OnComponentBeginOverlap.AddDynamic(this, &AMVSkillDoubleJump::OnBeginOverlap);
-	InteractColliderBox->OnComponentEndOverlap.AddDynamic(this, &AMVSkillDoubleJump::OnEndOverlap);
+	//InteractColliderBox->OnComponentEndOverlap.AddDynamic(this, &AMVSkillDoubleJump::OnEndOverlap);
 }
 
 void AMVSkillDoubleJump::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -26,7 +26,8 @@ void AMVSkillDoubleJump::OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AAc
 
 }
 
-void AMVSkillDoubleJump::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
-{
-
-}
+//void AMVSkillDoubleJump::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+//void AMVSkillDoubleJump::OnEndOverlap(UPrimitiveComponent* OnComponentEndOverlap, UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+//{
+//
+//}
