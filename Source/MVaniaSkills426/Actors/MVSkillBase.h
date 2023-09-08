@@ -67,7 +67,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Statue")
 	UStaticMeshComponent* Statue;
 
-	UPROPERTY(EditAnywhere, Category="SFX_SkillAcquire")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="SFX_SkillAcquire")
 	USoundBase* SFX_SkillAcquire;
 
 	UPROPERTY(EditAnywhere, Category="SkillBeginPosition", Meta = (MakeEditWidget = true))

@@ -8,7 +8,7 @@
 
 
 //DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FComponentBeginOverlapSignature, UPrimitiveComponent*, OverlappedComponent, AActor*, OtherActor, UPrimitiveComponent*, OtherComp);
-
+class UParticleSystem;
 /**
  * 
  */
@@ -20,9 +20,13 @@ class MVANIASKILLS426_API AMVSkillDoubleJump : public AMVSkillBase
 public:
 	AMVSkillDoubleJump();
 
+	UPROPERTY(EditAnywhere, Category = "ParticleSystemTemplate") UParticleSystem* ParticleSystemTemplate;
+
 	UFUNCTION() void OnBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
                         UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
                         bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION(BlueprintNativeEvent, Category = "Skills") void PlayerAcquiredSkillFX();
 
 	//UFUNCTION() void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
  //                       UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,

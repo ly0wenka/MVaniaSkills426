@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "../MVTypes.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
 #include "../HUD/MVNotify.h"
@@ -12,7 +13,7 @@
 #include "MVInteractiveObjectBase.generated.h"
 
 UCLASS()
-class MVANIASKILLS426_API AMVInteractiveObjectBase : public AActor
+class MVANIASKILLS426_API AMVInteractiveObjectBase : public AActor, public IInteract
 {
 	GENERATED_BODY()
 	
@@ -29,7 +30,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere, Category = "InteractiveObjectBase") USceneComponent* DefaultSceneRoot;
-	UPROPERTY(VisibleAnywhere, Category = "InteractiveObjectBase") UBoxComponent* InteractColliderBox;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") UBoxComponent* InteractColliderBox;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") UMVNotify* Notify;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "InteractiveObjectBase") FText InteractMessage;

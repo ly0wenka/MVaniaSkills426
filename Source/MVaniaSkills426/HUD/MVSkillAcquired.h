@@ -30,10 +30,10 @@ class MVANIASKILLS426_API UMVSkillAcquired : public UUserWidget
 	GENERATED_BODY()
 
 protected:
-	FText M_SkillAcquired_Title_Path = FText::FromString(TEXT("Material'/Game/Materials/M_SkillAcquired_Title.M_SkillAcquired_Title'"));
-	FText SkillAcquired_Path = FText::FromString(TEXT("WidgetBlueprint'/Game/SkillAcquired.SkillAcquired'"));
-	FText FT_Gothic_Letters_Font_Path = FText::FromString(TEXT("Font'/Game/Fonts/FT_Gothic_Letters_Font.FT_Gothic_Letters_Font'"));
-	FText T_Icon_DoubleJump_Path = FText::FromString(TEXT("Texture2D'/Game/Textures/T_Icon_DoubleJump.T_Icon_DoubleJump'"));
+	const FText M_SkillAcquired_Title_Path = FText::FromString(TEXT("Material'/Game/Materials/M_SkillAcquired_Title.M_SkillAcquired_Title'"));
+	const FText SkillAcquired_Path = FText::FromString(TEXT("WidgetBlueprint'/Game/SkillAcquired.SkillAcquired'"));
+	const FText FT_Gothic_Letters_Font_Path = FText::FromString(TEXT("Font'/Game/Fonts/FT_Gothic_Letters_Font.FT_Gothic_Letters_Font'"));
+	const FText T_Icon_DoubleJump_Path = FText::FromString(TEXT("Texture2D'/Game/Textures/T_Icon_DoubleJump.T_Icon_DoubleJump'"));
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget), Category="CanvasPanel")
 	UCanvasPanel* Canvas_Panel;
