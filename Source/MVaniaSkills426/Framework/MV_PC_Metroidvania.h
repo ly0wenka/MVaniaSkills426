@@ -16,4 +16,6 @@ class MVANIASKILLS426_API AMV_PC_Metroidvania : public APlayerController
 	GENERATED_BODY()
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PlayerController") UUserWidget* WBP_LearnedSkill;
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "PlayerController")
+	void ShowAcquiredSkill();
 };

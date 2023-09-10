@@ -156,11 +156,11 @@ AMVSkillBase::AMVSkillBase()
 
 void AMVSkillBase::SkillMeshMovementTimelineUpdate(float MovementValue)
 {
+	if (!Skill_Mesh) return;
+	
 	// Perform the vector interpolation
-	FVector NewLocation = UKismetMathLibrary::VLerp(SkillBeginPosition, SkillEndPosition, MovementValue);
-
+	const FVector NewLocation = UKismetMathLibrary::VLerp(SkillBeginPosition, SkillEndPosition, MovementValue);
 	Skill_Mesh->SetRelativeLocation(NewLocation);
-
 	CustomTimelineEvent(MovementValue);
 }
 

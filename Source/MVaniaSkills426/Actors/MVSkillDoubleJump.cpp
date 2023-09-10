@@ -8,6 +8,7 @@
 #include "Particles/ParticleSystemComponent.h" // Include the ParticleSystemComponent header
 #include "Components/PointLightComponent.h" // Include the PointLightComponent header
 #include "Components/BoxComponent.h" // Include the BoxComponent header
+#include "MVaniaSkills426/Framework/MV_PC_Metroidvania.h"
 
 AMVSkillDoubleJump::AMVSkillDoubleJump()
 {
@@ -69,7 +70,37 @@ void AMVSkillDoubleJump::PlayerAcquiredSkillFX_Implementation()
 
 void AMVSkillDoubleJump::ObjectInteractedWith_Implementation()
 {
+	if (!AsMVCharacter) return;
 
+	if (AsMVCharacter->bHasDoubleJump)
+	{
+		UKismetSystemLibrary::PrintString(GetWorld(), FString(TEXT("Player already has double jump.")));
+		return;
+	}
+
+	AsMVCharacter->bHasDoubleJump = true;
+	AsMVCharacter->SkillAcquired = E_Skills::DoubleJump;
+	PlayerAcquiredSkillFX();
+	FLatentActionInfo LatentInfo;
+	UKismetSystemLibrary::Delay(GetWorld(), 0.75f, LatentInfo);
+	UUserWidget* CreatedWidget = CreateWidget<UUserWidget>(GetWorld(), LoadObject<UClass>(nullptr, TEXT("WidgetBlueprint'/Game/SkillAcquired.SkillAcquired'")));
+	if (CreatedWidget != nullptr)
+	{
+		// Get Player Controller
+		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    
+		// Cast to your custom player controller class
+		AMV_PC_Metroidvania* CastedController = Cast<AMV_PC_Metroidvania>(PlayerController);
+    
+		if (CastedController != nullptr)
+		{
+			// Set the WBP_LearnedSkill variable in the custom player controller
+			CastedController->WBP_LearnedSkill = CreatedWidget;
+        
+			// Call the ShowAcquiredSkill function on the custom player controller
+			CastedController->ShowAcquiredSkill();
+		}
+	}
 }
 
 //void AMVSkillDoubleJump::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
