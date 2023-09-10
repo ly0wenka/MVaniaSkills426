@@ -65,7 +65,7 @@ enum class E_Skills : uint8
 ENUM_CLASS_FLAGS(E_Skills);
 
 UINTERFACE(BlueprintType)
-class MVANIASKILLS426_API UInteract : public UInterface {
+class UInteract : public UInterface {
     GENERATED_BODY()
 };
 

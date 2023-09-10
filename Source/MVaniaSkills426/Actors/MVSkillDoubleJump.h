@@ -28,6 +28,7 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, Category = "Skills") void PlayerAcquiredSkillFX();
 
+	virtual void ObjectInteractedWith_Implementation() override;
 	//UFUNCTION() void OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
  //                       UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
  //                       bool bFromSweep, const FHitResult& SweepResult);

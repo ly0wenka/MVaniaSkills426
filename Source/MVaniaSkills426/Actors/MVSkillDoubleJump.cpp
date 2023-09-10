@@ -5,7 +5,7 @@
 #include "UMG/Public/Blueprint/WidgetTree.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/StaticMeshComponent.h" // Include the StaticMeshComponent header
-#include "Components/ParticleSystemComponent.h" // Include the ParticleSystemComponent header
+#include "Particles/ParticleSystemComponent.h" // Include the ParticleSystemComponent header
 #include "Components/PointLightComponent.h" // Include the PointLightComponent header
 #include "Components/BoxComponent.h" // Include the BoxComponent header
 
@@ -65,10 +65,13 @@ void AMVSkillDoubleJump::PlayerAcquiredSkillFX_Implementation()
 			SC->DestroyComponent();
 		}
 	}
-	
+}
 
+void AMVSkillDoubleJump::ObjectInteractedWith_Implementation()
+{
 
 }
+
 //void AMVSkillDoubleJump::OnEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 //void AMVSkillDoubleJump::OnEndOverlap(UPrimitiveComponent* OnComponentEndOverlap, UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 //{
