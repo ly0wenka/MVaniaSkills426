@@ -37,8 +37,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Player Info")
 	bool bWMagicReady { true };
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump")
-	bool bHasDoubleJump;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump") bool bHasDoubleJump;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump") bool bIsDoubleJumping = false;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump") int32 JumpCount = 0;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump") FVector DoubleJumpVelocity = FVector(0.0f, 0.0f, 1200.0f);
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
 	bool bHasBackDash;
