@@ -3,6 +3,9 @@
 
 #include "MVCharacter.h"
 
+#include "Components/CapsuleComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
 // Sets default values
 AMVCharacter::AMVCharacter()
 {
@@ -170,5 +173,25 @@ void AMVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void AMVCharacter::PressedInputActionBackDash()
+{
+	if (bIsBackDashing && bBackDashReady && !GetCharacterMovement()->IsFlying())
+	{
+		bBackDashReady = true;
+		FTimerHandle TimerHandle;
+		FTimerDelegate Delegate;
+		Delegate.BindLambda([&](){});
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, Delegate, BackDashCooldown, false);
+		bBackDashReady = false;
+
+		bIsBackDashing = true;
+		if (GetCapsuleComponent()->GetComponentRotation().Yaw >= 0)
+		{
+			
+		}
+		bIsBackDashing = false;
+	}
 }
 

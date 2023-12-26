@@ -42,8 +42,15 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump") int32 JumpCount = 0;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Double Jump") FVector DoubleJumpVelocity = FVector(0.0f, 0.0f, 1200.0f);
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash")
-	bool bHasBackDash;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") bool bHasBackDash;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") bool bIsBackDashing;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") bool bBackDashReady;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") float BackDashCooldown = 0.35f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") FVector BackDashLeftAmount = FVector(-20.0f,0.0f,0.0f);
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") FVector BackDashRightAmount = -BackDashLeftAmount;
+public:
+	UFUNCTION(BlueprintCallable, Category="Skill - Back Dash")
+	void PressedInputActionBackDash();
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	bool bHasBMagicFireball;
