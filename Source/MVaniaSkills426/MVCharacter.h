@@ -50,7 +50,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Back Dash") FVector BackDashRightAmount = -BackDashLeftAmount;
 public:
 	UFUNCTION(BlueprintCallable, Category="Skill - Back Dash")
-	void PressedInputActionBackDash();
+	void PressedInputActionBackDash(bool& IsFacingRight);
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
 	bool bHasBMagicFireball;

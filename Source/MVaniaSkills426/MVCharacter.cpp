@@ -175,7 +175,7 @@ void AMVCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
-void AMVCharacter::PressedInputActionBackDash()
+void AMVCharacter::PressedInputActionBackDash(bool& IsFacingRight)
 {
 	if (bIsBackDashing && bBackDashReady && !GetCharacterMovement()->IsFlying())
 	{
@@ -187,11 +187,11 @@ void AMVCharacter::PressedInputActionBackDash()
 		bBackDashReady = false;
 
 		bIsBackDashing = true;
+		IsFacingRight = false;
 		if (GetCapsuleComponent()->GetComponentRotation().Yaw >= 0)
 		{
-			
+			IsFacingRight = true;
 		}
-		bIsBackDashing = false;
 	}
 }
 
