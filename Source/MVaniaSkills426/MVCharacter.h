@@ -52,8 +52,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Skill - Back Dash")
 	void PressedInputActionBackDash(bool& IsFacingRight);
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball")
-	bool bHasBMagicFireball;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball") 	bool bHasBMagicFireball;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball") 	bool bUsedFireball;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball") 	bool bFireballReady;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball") 	float FireballCooldown = 1.13f;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
 	bool bHasBMagicElectroSpark;
