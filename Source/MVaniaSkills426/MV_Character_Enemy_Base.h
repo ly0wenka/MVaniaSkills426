@@ -33,4 +33,5 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MV_Character_Enemy_Base") float ResistantMultiplier = 0.5f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MV_Character_Enemy_Base") float HP = 100.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MV_Character_Enemy_Base") float IncomingBaseDamage = 0.0f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MV_Character_Enemy_Base") float AttackDamage = 25.0f;
 };
