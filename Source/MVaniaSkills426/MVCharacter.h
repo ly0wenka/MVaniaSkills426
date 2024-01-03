@@ -57,8 +57,10 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball") 	bool bFireballReady = true;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Fireball") 	float FireballCooldown = 1.13f;
 public:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark")
-	bool bHasBMagicElectroSpark;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - ElectroSpark") bool bHasBMagicElectroSpark;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill - Magic Black - ElectroSpark") bool bUsedElectroSpark;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill - Magic Black - ElectroSpark") bool bElectroSparkReady = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill - Magic Black - ElectroSpark") float ElectroSparkCooldown = 2.1f;
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill - Magic Black - Bloodlust")
 	bool bHasBMagicBloodlust;
