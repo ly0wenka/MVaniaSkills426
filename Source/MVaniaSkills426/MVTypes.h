@@ -55,7 +55,7 @@ enum class E_Skills : uint8
     ElectroSpark = 0x4,
     Bloodlust = 0x5,
     ArcticBlast = 0x6,
-    LensOfTruth = 0x7,
+    LensOfTruth = E_WMagic::LensOfTruth,
     Mist = 0x8,
     Shield = 0x9,
     TimeSlow = 0xa,
