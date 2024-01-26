@@ -16,6 +16,8 @@ class MVANIASKILLS426_API UMVUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 public:
+    UMVUserWidget(const FObjectInitializer& ObjectInitializer);
+
     UFUNCTION(BlueprintCallable, Category = "UI - WM")
 	FSlateBrush GetWhiteMagicImage() const;
 

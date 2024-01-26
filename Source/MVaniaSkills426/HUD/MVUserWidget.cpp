@@ -5,12 +5,15 @@
 #include "../MVCharacter.h"
 #include "../MVTypes.h"
 
+UMVUserWidget::UMVUserWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+{
+	MagicEmpty.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_Magic_Empty.T_Magic_Empty'")));
+}
+
 void UMVUserWidget::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
-
-	MagicEmpty.SetResourceObject(LoadObject<UTexture2D>(this,
-		TEXT("Texture2D'/Game/Textures/T_Magic_Empty.T_Magic_Empty'")));
 }
 
 FSlateBrush UMVUserWidget::GetWhiteMagicImage() const

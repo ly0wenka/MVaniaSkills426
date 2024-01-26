@@ -11,6 +11,10 @@ AMVCharacter::AMVCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	SkillAcquiredMap[E_Skills::None].SkillIcon.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_Magic_Empty.T_Magic_Empty'")));
+
 	SkillAcquiredMap[E_Skills::DoubleJump].Title = FText::FromString(TEXT("Learned Double Jump!"));
 	SkillAcquiredMap[E_Skills::DoubleJump].Description = FText::FromString(TEXT("Allows player to jump again in mid-air."));
 	SkillAcquiredMap[E_Skills::DoubleJump].InputButton.SetResourceObject(LoadObject<UTexture2D>(this, 
@@ -42,6 +46,9 @@ AMVCharacter::AMVCharacter()
 	SkillAcquiredMap[E_Skills::Fireball].SkillBorderColor.TintColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	SkillAcquiredMap[E_Skills::Fireball].SkillFontColor = FSlateColor(FLinearColor(.08f, .005f, .035f));
 	SkillAcquiredMap[E_Skills::Fireball].bMagicSkill = true;
+
+	MagicMap[E_Skills::None].IconSlate.SetResourceObject(LoadObject<UTexture2D>(this,
+		TEXT("Texture2D'/Game/Textures/T_Magic_Empty.T_Magic_Empty'")));
 
 	MagicMap[E_Skills::Fireball].Name = FText::FromString(TEXT("Fireball"));
 	MagicMap[E_Skills::Fireball].ManaCost = 5;
